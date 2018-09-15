@@ -1,3 +1,6 @@
+# What is this?
+This is a Tumblr theme "Illustfolio 4". Google analytics is available.
+
 # Illustfolio 4
 
 The easiest way to make your own portfolio
