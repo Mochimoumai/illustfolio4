@@ -43,6 +43,7 @@
   <meta name="text:Your Facebook Username" content=""/>
   <meta name="text:Your Pixiv ID" content=""/>
   <meta name="text:Your Instagram Username" content=""/>
+  <meta name="text:Your Github Username" content=""/>
 
 
   <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
@@ -851,6 +852,13 @@
                   </a>
                 </li>
                 {/block:IfYourInstagramUsername}
+                {block:IfYourGithubUsername}
+                <li class="li-github">
+                  <a href="https://github.com/{text:Your Github Username}" target="_blank">
+                    <svg class="social-accounts-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet"><path fill="#aaa" d="M159 600 c-54 -29 -125 -113 -144 -171 -24 -70 -17 -198 13 -256 32 -62 74 -105 134 -139 49 -27 60 -29 158 -29 98 0 109 2 158 29 60 34 102 77 134 139 30 58 37 186 13 256 -29 90 -148 198 -208 189 -20 -3 -22 -10 -25 -68 -2 -36 -7 -69 -13 -74 -15 -16 -10 -26 11 -26 12 0 38 -9 59 -20 61 -30 89 -122 56 -180 -8 -14 -14 -44 -15 -67 0 -46 -12 -53 -53 -31 -28 15 -206 15 -234 0 -41 -22 -53 -15 -53 31 -1 23 -7 53 -15 67 -33 58 -5 150 56 180 21 11 48 20 59 20 14 0 20 5 16 13 -3 6 -9 20 -12 30 -5 12 -17 17 -45 17 -31 0 -45 -6 -66 -30 -39 -44 -47 -36 -13 14 29 43 52 56 98 56 20 0 23 4 20 33 -2 26 -8 32 -28 34 -14 2 -41 -6 -61 -17z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourGithubUsername}
               </ul>
             </div>
           </div>
