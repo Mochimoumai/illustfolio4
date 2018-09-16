@@ -22,6 +22,42 @@
   </script>
 {/block:IfShowTagList}
 
+{block:IfShowCustomizeTagList}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://static.tumblr.com/xxf6ewk/hScof72wo/tumblrposts.js"></script>
+  <script>
+    $(document).ready(function(){
+      (function() {
+        var posts = new TumblrPosts({
+          domain: location.host,
+          maxNum:300
+        });
+
+        var tags = [];
+        posts.bind(posts.EVENT_COMPLETE, function(e) {
+          var that = this;
+          var NUMBER_OF_POSTS = 1000;
+          $.each(this.getPosts(0, NUMBER_OF_POSTS), function(i, post) {
+            tags.push(post.tags[0]);
+          });
+
+          const uniqueTags = tags.filter((tag, index, array) => {
+            return array.indexOf(tag) === index;
+          });
+
+          uniqueTags.forEach(function(tag){
+            var html = '<li class="level1">' # TODO level?
+            // var html = '<li class="level' + (tag.count % 6 + 1) + '">'
+              + '<a href="/tagged/' + tag + '">' + tag + '</a></li>';
+            $(html).appendTo($("ul#customizeTags"));
+          });
+        });
+        posts.run();
+      })();
+    });
+  </script>
+{/block:IfShowCustomizeTagList}
+
 <script src="http://static.tumblr.com/xxf6ewk/Mh1ofifbk/scripts.js"></script>
 </body>
 </html>

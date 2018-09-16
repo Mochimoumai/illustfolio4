@@ -13,7 +13,7 @@
 <head>
   <meta charset="UTF-8">
 
-  
+
   <meta name="font:Body" content="Helvetica Neue"/>
 
   <meta name="image:Title Logo" content=""/>
@@ -30,6 +30,7 @@
 
   <meta name="if:Crop Thumbnails" content="1" />
   <meta name="if:Show Tag List" content="1" />
+  <meta name="if:Show Customize Tag List" content="1" />
   <meta name="if:Show Profile Section" content="1" />
   <meta name="if:Show Index Entry Footer" content="0" />
   <meta name="if:Single Column Mode" content="0" />
@@ -54,7 +55,7 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="https://static.tumblr.com/xlsgtjb/Zbyp4yngb/style.css" />
 
-  
+
   <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
   <meta property="og:type" content="article" />
 
@@ -203,7 +204,7 @@
     {/block:ShowHeaderImage}
   {/block:IndexPage}
 
-  
+
   {block:IndexPage}
 
     <div class="section-post l-section">
@@ -214,18 +215,18 @@
         </div>
       {/block:TagPage}
 
-      
+
       {block:ifNotSingleColumnMode}
         <div class="top-post-container
           {select:Thumbnails Size}
          ">
-          
+
           <div class="index-post-wrapper {select:Thumbnails Margin}">
             {block:Posts}
               <article class="post index-post {PostType}">
                 <div class="post-inner">
 
-                  
+
                   {block:Text}
                     <a href="{Permalink}" class="post-content-anchor">
                       <div class="post-content-wrapper">
@@ -239,7 +240,7 @@
                     </a>
                   {/block:Text}
 
-                  
+
                   {block:Photo}
                     <a href="{Permalink}">
                       {block:IfCropThumbnails}
@@ -251,7 +252,7 @@
                     </a>
                   {/block:Photo}
 
-                  
+
                   {block:Photoset}
                     {block:Photos}
                       <a href="{Permalink}">
@@ -265,7 +266,7 @@
                     {/block:Photos}
                   {/block:Photoset}
 
-                  
+
                   {block:Quote}
                     <a href="{Permalink}" class="post-content-anchor">
                       <div class="post-content-wrapper">
@@ -279,7 +280,7 @@
                     </a>
                   {/block:Quote}
 
-                  
+
                   {block:Link}
                     <a href="{Permalink}" class="post-content-anchor
                     {block:Thumbnail}has-thumbnail{/block:Thumbnail}"
@@ -296,7 +297,7 @@
                     </a>
                   {/block:Link}
 
-                  
+
                   {block:Chat}
                     <a href="{Permalink}" class="post-content-anchor">
                       <div class="post-content-wrapper">
@@ -312,7 +313,7 @@
                     </a>
                   {/block:Chat}
 
-                  
+
                   {block:Video}
                     <a href="{Permalink}" class="post-content-anchor {block:VideoThumbnail}has-thumbnail{/block:VideoThumbnail}"
                     {block:VideoThumbnail}style="background-image: url('{VideoThumbnailURL}');"{/block:VideoThumbnail}
@@ -330,7 +331,7 @@
                     </a>
                   {/block:Video}
 
-                  
+
                   {block:Audio}
                     <a href="{Permalink}" class="post-content-anchor">
                       <div class="post-content-wrapper">
@@ -346,7 +347,7 @@
                     </a>
                   {/block:Audio}
 
-                  
+
                   {block:Answer}
                     <a href="{Permalink}" class="post-content-anchor">
                       <div class="post-content-wrapper">
@@ -360,7 +361,7 @@
                     </a>
                   {/block:Answer}
 
-                  
+
                   {block:IfShowIndexEntryFooter}
                     <footer class="index-entry-footer">
                       <div class="index-entry-footer-meta">
@@ -386,7 +387,7 @@
         </div>
       {/block:ifNotSingleColumnMode}
 
-      
+
       {block:ifSingleColumnMode}
         <div class="top-post-container top-single-column">
           {block:Posts}
@@ -538,7 +539,7 @@
 
     </div>
 
-    
+
     {block:Pagination}
       <div class="l-container">
         <div class="pagenation pagenation-index">
@@ -554,12 +555,12 @@
 
   {/block:IndexPage}
 
-  
+
   {block:PermalinkPage}
     {block:Posts}
       <article class="post permalink-post {TagsAsClasses} {PostType}">
 
-        
+
         {block:Photo}
           <div class="l-container full-image">
             {LinkOpenTag}
@@ -576,7 +577,7 @@
 
         <div class="l-container-mini section">
 
-          
+
           {block:Text}
             <header class="entry-header">
               {block:Title}
@@ -588,7 +589,7 @@
             </div>
           {/block:Text}
 
-          
+
           {block:Photo}
             <div class="entry-content">
               {block:Caption}
@@ -599,7 +600,7 @@
             </div>
           {/block:Photo}
 
-          
+
           {block:Photoset}
             <div class="entry-content">
               {block:Caption}
@@ -610,7 +611,7 @@
             </div>
           {/block:Photoset}
 
-          
+
           {block:Quote}
             <div class="entry-content {Length}">
               <blockquote>“{Quote}”</blockquote>
@@ -622,7 +623,7 @@
             </div>
           {/block:Quote}
 
-          
+
           {block:Link}
             <header class="entry-header">
               <h1 class="entry-title">
@@ -636,7 +637,7 @@
             </div>
           {/block:Link}
 
-          
+
           {block:Chat}
             <div class="entry-content">
               {block:Title}
@@ -655,7 +656,7 @@
             </div>
           {/block:Chat}
 
-          
+
           {block:Video}
             <div class="entry-content">
               {Video-700}
@@ -667,7 +668,7 @@
             </div>
           {/block:Video}
 
-          
+
           {block:Audio}
             <div class="entry-content">
               {AudioPlayerBlack}
@@ -679,7 +680,7 @@
             </div>
           {/block:Audio}
 
-          
+
           {block:Answer}
             <div class="asker-group">
               <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
@@ -694,9 +695,9 @@
             </div>
           {/block:Answer}
 
-          
+
           {block:Date}
-            
+
             <footer class="entry-footer">
 
               <div class="entry-footer-section article-meta">
@@ -780,7 +781,7 @@
     {/block:Posts}
   {/block:PermalinkPage}
 
-  
+
   {block:PermalinkPagination}
     <div class="pagenation pagenation-permalink">
       {block:NextPost}
@@ -866,6 +867,13 @@
     </div>
   {/block:IfShowTagList}
 
+  {block:IfShowCustomizeTagList}
+    <div class="l-container l-section tag-list">
+      <h3>Tags</h3>
+      <ul id="customizeTags" class="tagCloud"></ul>
+    </div>
+  {/block:IfShowCustomizeTagList}
+
 </div>
 
 <!-- Note: Do not delete the following section.
@@ -925,7 +933,42 @@
   </script>
 {/block:IfShowTagList}
 
+{block:IfShowCustomizeTagList}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://static.tumblr.com/xxf6ewk/hScof72wo/tumblrposts.js"></script>
+  <script>
+    $(document).ready(function(){
+      (function() {
+        var posts = new TumblrPosts({
+          domain: location.host,
+          maxNum:300
+        });
+
+        var tags = [];
+        posts.bind(posts.EVENT_COMPLETE, function(e) {
+          var that = this;
+          var NUMBER_OF_POSTS = 1000;
+          $.each(this.getPosts(0, NUMBER_OF_POSTS), function(i, post) {
+            tags.push(post.tags[0]);
+          });
+
+          const uniqueTags = tags.filter((tag, index, array) => {
+            return array.indexOf(tag) === index;
+          });
+
+          uniqueTags.forEach(function(tag){
+            var html = '<li class="level1">' // TODO
+            // var html = '<li class="level' + (tag.count % 6 + 1) + '">'
+              + '<a href="/tagged/' + tag + '">' + tag + '</a></li>';
+            $(html).appendTo($("ul#customizeTags"));
+          });
+        });
+        posts.run();
+      })();
+    });
+  </script>
+{/block:IfShowCustomizeTagList}
+
 <script src="http://static.tumblr.com/xxf6ewk/Mh1ofifbk/scripts.js"></script>
 </body>
 </html>
-
