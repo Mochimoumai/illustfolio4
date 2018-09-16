@@ -46,7 +46,7 @@
           });
 
           uniqueTags.forEach(function(tag){
-            var html = '<li class="level1">' # TODO level?
+            var html = '<li class="level1">' // TODO level?
             // var html = '<li class="level' + (tag.count % 6 + 1) + '">'
               + '<a href="/tagged/' + tag + '">' + tag + '</a></li>';
             $(html).appendTo($("ul#customizeTags"));
