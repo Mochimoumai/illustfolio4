@@ -55,41 +55,21 @@ pageId = "index";
   {block:IndexPage}
     {block:ShowHeaderImage}
     <div class="cover-image"></div>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://static.tumblr.com/xxf6ewk/hScof72wo/tumblrposts.js"></script>
     <script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
     $(document).ready(function(){
       (function() {
-        var posts = new TumblrPosts({
-          domain: location.host,
-          maxNum:300
-        });
-
-        posts.bind(posts.EVENT_COMPLETE, function(e) {
-          var posts = [];
-          var tagged = $("h3.tagged").text();
-          if (tagged != "") {
-              var selectedTag = tagged.match(/"(\w+\s?\w+)"/)[1];
-
-              // TODO  tag を引数にして API 叩けない？
-              var tempPosts = this.getPosts(0, 1000);
-              tempPosts.forEach(function(post) {
-                 if (0 <= $.inArray(selectedTag, post.tags)) {
-                    posts.push(post);
-                 }
-              });
-          } else {
-            posts = this.getPosts(0, 1000);
-          }
-
-          var post_count = posts.length;
-          var random = Math.floor(Math.random() * post_count);
-
-          var post = posts[random];
-          $(".cover-image").css('background-image', 'url(' + post['photo-url-1280'] + ')');
-
+        var thumbs = $('.post-photo-thumb');
+        var thumbs_count = thumbs.length;
+        var random_number = Math.floor(Math.random() * thumbs_count);
+        var thumb = thumbs[random_number];
+        var backgroundImage =  thumb.style.backgroundImage.replace(/(url\("https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"\))/, '$1' + '1280' + '$2');
+        $(".cover-image").css('background-image', backgroundImage);
+      })();
+    });
+    </script>
         });
         posts.run();
       })();
