@@ -35,21 +35,14 @@
 
         var tags = [];
         posts.bind(posts.EVENT_COMPLETE, function(e) {
-          var that = this;
           var NUMBER_OF_POSTS = 1000;
           $.each(this.getPosts(0, NUMBER_OF_POSTS), function(i, post) {
-            tags.push(post.tags[0]);
-          });
-
-          const uniqueTags = tags.filter((tag, index, array) => {
-            return array.indexOf(tag) === index;
-          });
-
-          uniqueTags.forEach(function(tag){
-            var html = '<li class="level1">' // TODO level?
-            // var html = '<li class="level' + (tag.count % 6 + 1) + '">'
-              + '<a href="/tagged/' + tag + '">' + tag + '</a></li>';
-            $(html).appendTo($("ul#customizeTags"));
+            var mainTag = post.tags[0];
+            if ($.inArray(mainTag, tags) < 0) {
+              var html = '<li class="level1">' + '<a href="/tagged/' + mainTag + '">' + mainTag + '</a></li>';
+              $(html).appendTo($("ul#customizeTags"));
+              tags.push(mainTag);
+            }
           });
         });
         posts.run();
