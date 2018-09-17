@@ -65,7 +65,7 @@ pageId = "index";
         var thumbs_count = thumbs.length;
         var random_number = Math.floor(Math.random() * thumbs_count);
         var thumb = thumbs[random_number];
-        var backgroundImage =  thumb.style.backgroundImage.replace(/(url\("https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"\))/, '$1' + '1280' + '$2');
+        var backgroundImage =  thumb.style.backgroundImage.replace(/(url\("?https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"?\))/, '$1' + '1280' + '$2');
         $(".cover-image").css('background-image', backgroundImage);
       })();
     });
