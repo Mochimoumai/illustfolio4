@@ -199,7 +199,27 @@
 
   {block:IndexPage}
     {block:ShowHeaderImage}
-      <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
+    <div class="cover-image"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      (function() {
+        var thumbs = $('.post-photo-thumb');
+        var thumbs_count = thumbs.length;
+        var random_number = Math.floor(Math.random() * thumbs_count);
+        var thumb = thumbs[random_number];
+        var backgroundImage =  thumb.style.backgroundImage.replace(/(url\("https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"\))/, '$1' + '1280' + '$2');
+        $(".cover-image").css('background-image', backgroundImage);
+      })();
+    });
+    </script>
+        });
+        posts.run();
+      })();
+    });
+    </script>
     {/block:ShowHeaderImage}
   {/block:IndexPage}
 
