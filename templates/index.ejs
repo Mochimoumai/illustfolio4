@@ -68,6 +68,8 @@ pageId = "index";
         var backgroundImage = thumb[0].style.backgroundImage.replace(/(url\("?https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"?\))/, '$1' + '1280' + '$2');
         $(".cover-image").css('background-image', backgroundImage);
         $(".cover-image-link").attr("href", $('.post-inner a').eq(random_number).attr('href'));
+        $(".cover-image-link").removeAttr("target");
+      })();
       })();
     });
     </script>
