@@ -61,12 +61,13 @@ pageId = "index";
     <script>
     $(document).ready(function(){
       (function() {
-        var thumbs = $('.post-photo-thumb');
-        var thumbs_count = thumbs.length;
-        var random_number = Math.floor(Math.random() * thumbs_count);
-        var thumb = thumbs[random_number];
-        var backgroundImage =  thumb.style.backgroundImage.replace(/(url\("?https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"?\))/, '$1' + '1280' + '$2');
+        var posts = $('.post-inner');
+        var posts_count = posts.length;
+        var random_number = Math.floor(Math.random() * posts_count);
+        var thumb = $('.post-inner div').eq(random_number);
+        var backgroundImage = thumb[0].style.backgroundImage.replace(/(url\("?https\:\/\/78\.media\.tumblr\.com\/\w+\/\w+_)\d+(.\w+"?\))/, '$1' + '1280' + '$2');
         $(".cover-image").css('background-image', backgroundImage);
+        $(".cover-image-link").attr("href", $('.post-inner a').eq(random_number).attr('href'));
       })();
     });
     </script>
