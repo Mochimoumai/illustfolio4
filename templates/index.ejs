@@ -69,6 +69,21 @@ pageId = "index";
         </div>
       {/block:TagPage}
 
+      <%# Tag list for index page %>
+      {block:IfShowTagList}
+        <div class="l-container l-section tag-list">
+          <h3>Tags</h3>
+          <ul id="tags" class="tagCloud"></ul>
+        </div>
+      {/block:IfShowTagList}
+
+      {block:IfShowCustomizeTagList}
+        <div class="l-container l-section tag-list">
+          <h3>Tags</h3>
+          <ul id="customizeTags" class="tagCloud"></ul>
+        </div>
+      {/block:IfShowCustomizeTagList}
+
       <%# グリッドモード %>
       {block:ifNotSingleColumnMode}
         <div class="top-post-container
@@ -627,6 +642,21 @@ pageId = "index";
             </footer>
 
           {/block:Date}
+
+          <%# Tag list for detail page %>
+          {block:IfShowTagList}
+            <div class="l-container l-section tag-list">
+              <h3>Tags</h3>
+              <ul id="tags" class="tagCloud"></ul>
+            </div>
+          {/block:IfShowTagList}
+
+          {block:IfShowCustomizeTagList}
+            <div class="l-container l-section tag-list">
+              <h3>Tags</h3>
+              <ul id="customizeTags" class="tagCloud"></ul>
+            </div>
+          {/block:IfShowCustomizeTagList}
 
         </div><%# container %>
 
